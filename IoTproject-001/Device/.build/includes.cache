@@ -1,0 +1,52 @@
+[
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\cores\\arduino"
+  },
+  {
+    "Sourcefile": "",
+    "Include": "",
+    "Includepath": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\variants\\MXChip_AZ3166"
+  },
+  {
+    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\IoTproject-001\\Device\\.build\\sketch\\device.ino.cpp",
+    "Include": "AudioClassV2.h",
+    "Includepath": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\AudioV2\\src"
+  },
+  {
+    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\IoTproject-001\\Device\\.build\\sketch\\device.ino.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\AudioV2\\src\\AudioClassV2.cpp",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\AudioV2\\src\\nau88c10.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\AudioV2\\src\\stm32412g_discovery.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\AudioV2\\src\\stm32412g_discovery_audio.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\AudioV2\\src\\stm32f4xx_hal_msp.c",
+    "Include": "",
+    "Includepath": ""
+  },
+  {
+    "Sourcefile": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\AudioV2\\src\\stm32f4xx_it.c",
+    "Include": "",
+    "Includepath": ""
+  }
+]

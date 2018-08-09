@@ -227,48 +227,6 @@ c:\Users\Michael.Coutanche\Documents\GitHub\iot-workbench-projects\examples\devk
  C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/AttachInterrupt.h \
  C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\system/platform/mbed_stats.h \
  C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/Watchdog.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\WiFi\src/AZ3166WiFi.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\WiFi\src/utility/wl_definitions.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/IPAddress.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\WiFi\src/AZ3166WiFiClient.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\system/features/netsocket/TCPSocket.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/Print.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\WiFi\src/AZ3166WiFiServer.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\system/features/netsocket/TCPServer.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\AzureIoT\src/AzureIotHub.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothub_client.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothubtransport.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/lock.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/macro_utils.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/umock_c_prod.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/crt_abstractions.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothub_client_ll.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/agenttime.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/xio.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/optionhandler.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/doublylinkedlist.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothub_message.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/map.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/strings.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/strings_types.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothub_transport_ll.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothub_client_authorization.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothub_client_private.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/constbuffer.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/buffer_.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/tickcounter.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothub_message.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/threadapi.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/platform.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/xlogging.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/c-utility/inc/azure_c_shared_utility/optimize_size.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/iothub_client/inc/iothubtransportmqtt.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/az_iot/azureiotcerts.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\AzureIoT\src/DevKitMQTTClient.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\AzureIoT\src/AzureIotHub.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\Sensors\src/LIS2MDLSensor.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\Sensors\src/ST_INTERFACES/DevI2C.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\system/hal/pinmap.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\Sensors\src/utility/lis2mdl_driver.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\Sensors\src/ST_INTERFACES/MagneticSensor.h \
- C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\Sensors\src/ST_INTERFACES/Component.h
+ C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\AudioV2\src/AudioClassV2.h \
+ C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\AudioV2\src/nau88c10.h \
+ C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\AudioV2\src/audio_common.h

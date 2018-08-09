@@ -1,209 +1,123 @@
-#include <Arduino.h>
 #line 1 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 #line 1 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-// Copyright (c) Microsoft. All rights reserved.
-// Licensed under the MIT license. 
-// To get started please visit https://microsoft.github.io/azure-iot-developer-kit/docs/projects/door-monitor?utm_source=ArduinoExtension&utm_medium=ReleaseNote&utm_campaign=VSCode
-#include "AZ3166WiFi.h"
-#include "AzureIotHub.h"
-#include "DevKitMQTTClient.h"
-#include "LIS2MDLSensor.h"
+#include "Arduino.h"
 #include "OledDisplay.h"
+#include "AudioClassV2.h"
 
-#define APP_VERSION     "ver=1.0"
-#define LOOP_DELAY      1000
-#define EXPECTED_COUNT  5
+AudioClass& Audio = AudioClass::getInstance();
+const int AUDIO_SIZE = 32000 * 3 + 45;
 
-// The magnetometer sensor
-static DevI2C *i2c;
-static LIS2MDLSensor *lis2mdl;
+int lastButtonAState;
+int buttonAState;
+int lastButtonBState;
+int buttonBState;
+char *audioBuffer;
+int totalSize;
+int monoSize;
 
-// Data from magnetometer sensor
-static int axes[3];
-static int base_x;
-static int base_y;
-static int base_z;
-
-// Indicate whether the magnetometer sensor has been initialized
-static bool initialized = false;
-
-// The open / close status of the door
-static bool preOpened = false;
-
-// Indicate whether DoorMonitorSucceed event has been logged
-static bool telemetrySent = false;
-
-// Indicate whether WiFi is ready
-static bool hasWifi = false;
-
-// Indicate whether IoT Hub is ready
-static bool hasIoTHub = false;
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Utilities
-#line 41 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-static void InitWiFi();
-#line 59 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-static void InitMagnetometer();
-#line 102 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-void CheckMagnetometerStatus();
-#line 136 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-void setup();
-#line 172 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-void loop();
-#line 41 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-static void InitWiFi()
+#line 16 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+void setup(void);
+#line 34 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+void loop(void);
+#line 60 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+void printIdleMessage();
+#line 68 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+void record();
+#line 97 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+void play();
+#line 16 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+void setup(void)
 {
-  Screen.print(2, "Connecting...");
-  
-  if (WiFi.begin() == WL_CONNECTED)
-  {
-    IPAddress ip = WiFi.localIP();
-    Screen.print(1, ip.get_address());
-    hasWifi = true;
-    Screen.print(2, "Running... \r\n");
-  }
-  else
-  {
-    hasWifi = false;
-    Screen.print(1, "No Wi-Fi\r\n ");
-  }
-}
-
-static void InitMagnetometer()
-{
-  Screen.print(2, "Initializing...");
-  i2c = new DevI2C(D14, D15);
-  lis2mdl = new LIS2MDLSensor(*i2c);
-  lis2mdl->init(NULL);
-  
-  lis2mdl->getMAxes(axes);
-  base_x = axes[0];
-  base_y = axes[1];
-  base_z = axes[2];
-  
-  int count = 0;
-  int delta = 10;
-  char buffer[20];
-  while (true)
-  {
-    delay(LOOP_DELAY);
-    lis2mdl->getMAxes(axes);
-    
-    // Waiting for the data from sensor to become stable
-    if (abs(base_x - axes[0]) < delta && abs(base_y - axes[1]) < delta && abs(base_z - axes[2]) < delta)
-    {
-      count++;
-      if (count >= EXPECTED_COUNT)
-      {
-        // Done
-        Screen.print(0, "Monitoring...");
-        break;
-      }
-    }
-    else
-    {
-      count = 0;
-      base_x = axes[0];
-      base_y = axes[1];
-      base_z = axes[2];
-    }
-    sprintf(buffer, "      %d", EXPECTED_COUNT - count);
-    Screen.print(1, buffer);
-  }
-}
-
-void CheckMagnetometerStatus()
-{
-  char *message;
-  int delta = 30;
-  bool curOpened = false;
-  if (abs(base_x - axes[0]) < delta && abs(base_y - axes[1]) < delta && abs(base_z - axes[2]) < delta)
-  {
-    Screen.print(0, "Door Shut");
-    message = "{\"DoorStatus\":\"Closed\"}";
-    curOpened = false;
-  }
-  else
-  {
-    Screen.print(0, "Shut the door!");
-    message = "{\"DoorStatus\":\"Opened\"}";
-    curOpened = true;
-  }
-  // send message when status change
-  if (curOpened != preOpened)
-  {
-    if (DevKitMQTTClient_SendEvent(message))
-    {
-      if (!telemetrySent)
-      {
-        telemetrySent = true;
-        LogTrace("DoorMonitorSucceed", APP_VERSION);
-      }
-    }
-    preOpened = curOpened;
-  }
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Arduino sketch
-void setup()
-{
-  Screen.init();
-  Screen.print(0, "DoorMonitor");
-
-  Screen.print(2, "Initializing...");
-  Screen.print(3, " > Serial");
+  pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
-  
-  // Initialize the WiFi module
-  Screen.print(3, " > WiFi");
-  hasWifi = false;
-  InitWiFi();
-  if (!hasWifi)
-  {
-    return;
-  }
-  LogTrace("DoorMonitor", APP_VERSION);
 
-  // IoT hub
-  Screen.print(3, " > IoT Hub");
-  DevKitMQTTClient_SetOption(OPTION_MINI_SOLUTION_NAME, "DoorMonitor");
-  if (!DevKitMQTTClient_Init())
-  {
-    Screen.clean();
-    Screen.print(0, "DoorMonitor");
-    Screen.print(2, "No IoT Hub");
-    hasIoTHub = false;
-    return;
-  }
-  hasIoTHub = true;
+  Serial.println("Helloworld in Azure IoT DevKits!");
 
-  Screen.print(3, " > Magnetometer");
-  InitMagnetometer();
+  // initialize the button pin as a input
+  pinMode(USER_BUTTON_A, INPUT);
+  lastButtonAState = digitalRead(USER_BUTTON_A);
+  pinMode(USER_BUTTON_B, INPUT);
+  lastButtonBState = digitalRead(USER_BUTTON_B);
+
+  // Setup your local audio buffer
+  audioBuffer = (char *)malloc(AUDIO_SIZE + 1);
+  memset(audioBuffer, 0x0, AUDIO_SIZE);
 }
 
-void loop()
+void loop(void)
 {
-  if (hasWifi && hasIoTHub)
+  printIdleMessage();
+
+  while (1)
   {
-    // Get data from magnetometer sensor
-    lis2mdl->getMAxes(axes);
-    Serial.printf("Axes: x - %d, y - %d, z - %d\r\n", axes[0], axes[1], axes[2]);
+    buttonAState = digitalRead(USER_BUTTON_A);
+    buttonBState = digitalRead(USER_BUTTON_B);
+    
+    if (buttonAState == LOW && lastButtonAState == HIGH)
+    {
+      record();
+    }
 
-    char buffer[50];
-
-    sprintf(buffer, "x:  %d", axes[0]);
-    Screen.print(1, buffer);
-
-    sprintf(buffer, "y:  %d", axes[1]);
-    Screen.print(2, buffer);
-
-    sprintf(buffer, "z:  %d", axes[2]);
-    Screen.print(3, buffer);
-
-    CheckMagnetometerStatus();
+    if (buttonBState == LOW && lastButtonBState == HIGH)
+    {
+      play();
+    }
+    
+    lastButtonAState = buttonAState;
+    lastButtonBState = buttonBState;
   }
-  delay(LOOP_DELAY);
+
+  delay(10);
 }
 
+void printIdleMessage()
+{
+  Screen.clean();
+  Screen.print(0, "AZ3166 Audio:  ");
+  Screen.print(1, "Press A to record", true);
+  Screen.print(2, "Press B to play", true);
+}
+
+void record()
+{
+  // Re-config the audio data format
+  Audio.format(8000, 16);
+  Audio.setVolume(80);
+
+  Serial.println("start recording");
+  Screen.clean();
+  Screen.print(0, "Start recording");
+
+  // Start to record audio data
+  Audio.startRecord(audioBuffer, AUDIO_SIZE);
+
+  // Check whether the audio record is completed.
+  while (digitalRead(USER_BUTTON_A) == LOW && Audio.getAudioState() == AUDIO_STATE_RECORDING)
+  {
+    delay(10);
+  }
+  Audio.stop();
+  
+  Screen.clean();
+  Screen.print(0, "Finish recording");
+  totalSize = Audio.getCurrentSize();
+  Serial.print("Recorded size: ");
+  Serial.println(totalSize);
+
+  printIdleMessage();
+}
+
+void play()
+{
+  Screen.clean();
+  Screen.print(0, "Start playing");
+  Audio.startPlay(audioBuffer, totalSize);
+  
+  while (Audio.getAudioState() == AUDIO_STATE_PLAYING)
+  {
+    delay(10);
+  }
+  
+  Screen.print(0, "Stop playing");
+  printIdleMessage();
+}
