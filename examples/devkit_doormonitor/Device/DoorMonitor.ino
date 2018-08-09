@@ -106,13 +106,13 @@ void CheckMagnetometerStatus()
   bool curOpened = false;
   if (abs(base_x - axes[0]) < delta && abs(base_y - axes[1]) < delta && abs(base_z - axes[2]) < delta)
   {
-    Screen.print(0, "Damn Door Shut");
+    Screen.print(0, "Door Shut");
     message = "{\"DoorStatus\":\"Closed\"}";
     curOpened = false;
   }
   else
   {
-    Screen.print(0, "Damn Door Open");
+    Screen.print(0, "Shut the door!");
     message = "{\"DoorStatus\":\"Opened\"}";
     curOpened = true;
   }

@@ -1,4 +1,4 @@
-c:\Users\Michael.Coutanche\Documents\IoTWorkbenchProjects\examples\devkit_doormonitor\Device\.build\libraries\Sensors\LPS22HBSensor.cpp.o: \
+c:\Users\Michael.Coutanche\Documents\GitHub\iot-workbench-projects\examples\devkit_doormonitor\Device\.build\libraries\Sensors\LPS22HBSensor.cpp.o: \
  C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\libraries\Sensors\src\LPS22HBSensor.cpp \
  C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/system/mbed_config.h \
  C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/system/mbed.h \

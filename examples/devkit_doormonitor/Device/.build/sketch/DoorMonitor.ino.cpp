@@ -1,6 +1,6 @@
 #include <Arduino.h>
-#line 1 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-#line 1 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+#line 1 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+#line 1 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. 
 // To get started please visit https://microsoft.github.io/azure-iot-developer-kit/docs/projects/door-monitor?utm_source=ArduinoExtension&utm_medium=ReleaseNote&utm_campaign=VSCode
@@ -41,17 +41,17 @@ static bool hasIoTHub = false;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Utilities
-#line 41 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+#line 41 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 static void InitWiFi();
-#line 59 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+#line 59 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 static void InitMagnetometer();
-#line 102 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+#line 102 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 void CheckMagnetometerStatus();
-#line 136 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+#line 136 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 void setup();
-#line 172 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+#line 172 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 void loop();
-#line 41 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+#line 41 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 static void InitWiFi()
 {
   Screen.print(2, "Connecting...");
@@ -120,13 +120,13 @@ void CheckMagnetometerStatus()
   bool curOpened = false;
   if (abs(base_x - axes[0]) < delta && abs(base_y - axes[1]) < delta && abs(base_z - axes[2]) < delta)
   {
-    Screen.print(0, "Damn Door Shut");
+    Screen.print(0, "Door Shut");
     message = "{\"DoorStatus\":\"Closed\"}";
     curOpened = false;
   }
   else
   {
-    Screen.print(0, "Damn Door Open");
+    Screen.print(0, "Shut the door!");
     message = "{\"DoorStatus\":\"Opened\"}";
     curOpened = true;
   }

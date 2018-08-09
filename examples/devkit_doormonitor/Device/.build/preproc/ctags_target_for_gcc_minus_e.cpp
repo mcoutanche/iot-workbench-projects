@@ -1,13 +1,13 @@
-# 1 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
-# 1 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+# 1 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+# 1 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. 
 // To get started please visit https://microsoft.github.io/azure-iot-developer-kit/docs/projects/door-monitor?utm_source=ArduinoExtension&utm_medium=ReleaseNote&utm_campaign=VSCode
-# 5 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
-# 6 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
-# 7 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
-# 8 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
-# 9 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
+# 5 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
+# 6 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
+# 7 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
+# 8 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
+# 9 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 2
 
 
 
@@ -64,9 +64,9 @@ static void InitMagnetometer()
   i2c = new DevI2C(D14, D15);
   lis2mdl = new LIS2MDLSensor(*i2c);
   lis2mdl->init(
-# 64 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 3 4
+# 64 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino" 3 4
                __null
-# 64 "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
+# 64 "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\DoorMonitor.ino"
                    );
 
   lis2mdl->getMAxes(axes);
@@ -112,13 +112,13 @@ void CheckMagnetometerStatus()
   bool curOpened = false;
   if (abs(base_x - axes[0]) < delta && abs(base_y - axes[1]) < delta && abs(base_z - axes[2]) < delta)
   {
-    Screen.print(0, "Damn Door Shut");
+    Screen.print(0, "Door Shut");
     message = "{\"DoorStatus\":\"Closed\"}";
     curOpened = false;
   }
   else
   {
-    Screen.print(0, "Damn Door Open");
+    Screen.print(0, "Shut the door!");
     message = "{\"DoorStatus\":\"Opened\"}";
     curOpened = true;
   }

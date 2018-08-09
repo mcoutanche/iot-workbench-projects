@@ -1,3 +1,3 @@
-c:\Users\Michael.Coutanche\Documents\IoTWorkbenchProjects\examples\devkit_doormonitor\Device\.build\core\httpserver\web_data.c.o: \
+c:\Users\Michael.Coutanche\Documents\GitHub\iot-workbench-projects\examples\devkit_doormonitor\Device\.build\core\httpserver\web_data.c.o: \
  C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino\httpserver\web_data.c \
  C:\Users\Michael.Coutanche\AppData\Local\Arduino15\packages\AZ3166\hardware\stm32f4\1.4.0\cores\arduino/system/mbed_config.h

@@ -10,22 +10,22 @@
     "Includepath": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\variants\\MXChip_AZ3166"
   },
   {
-    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\.build\\sketch\\DoorMonitor.ino.cpp",
+    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\.build\\sketch\\DoorMonitor.ino.cpp",
     "Include": "AZ3166WiFi.h",
     "Includepath": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\WiFi\\src"
   },
   {
-    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\.build\\sketch\\DoorMonitor.ino.cpp",
+    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\.build\\sketch\\DoorMonitor.ino.cpp",
     "Include": "AzureIotHub.h",
     "Includepath": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\AzureIoT\\src"
   },
   {
-    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\.build\\sketch\\DoorMonitor.ino.cpp",
+    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\.build\\sketch\\DoorMonitor.ino.cpp",
     "Include": "LIS2MDLSensor.h",
     "Includepath": "C:\\Users\\Michael.Coutanche\\AppData\\Local\\Arduino15\\packages\\AZ3166\\hardware\\stm32f4\\1.4.0\\libraries\\Sensors\\src"
   },
   {
-    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\IoTWorkbenchProjects\\examples\\devkit_doormonitor\\Device\\.build\\sketch\\DoorMonitor.ino.cpp",
+    "Sourcefile": "c:\\Users\\Michael.Coutanche\\Documents\\GitHub\\iot-workbench-projects\\examples\\devkit_doormonitor\\Device\\.build\\sketch\\DoorMonitor.ino.cpp",
     "Include": "",
     "Includepath": ""
   },
