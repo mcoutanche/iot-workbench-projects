@@ -1,0 +1,20 @@
+{
+    "folders": [
+        {
+            "path": "Device"
+        },
+        {
+            "path": "Functions"
+        }
+    ],
+    "settings": {
+        "IoTWorkbench.BoardId": "devkit",
+        "IoTWorkbench.DevicePath": "Device",
+        "IoTWorkbench.FunctionPath": "Functions",
+        "IoTWorkbench.iothubConnectionString": "HostName=techkb-iot-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=1bA0VUOr6VWW4kQOUecfvmuwLegcq70pLfmL+iObn+s=",
+        "IoTWorkbench.eventHubConnectionString": "Endpoint=sb://ihsuprodamres074dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=1bA0VUOr6VWW4kQOUecfvmuwLegcq70pLfmL+iObn+s=",
+        "IoTWorkbench.eventHubConnectionPath": "iothub-ehub-techkb-iot-647924-7b18429a4c",
+        "IoTWorkbench.iothubDeviceConnectionString": "HostName=techkb-iot-hub.azure-devices.net;DeviceId=IoT-DevKit;SharedAccessKey=4XkPMcpePE4kYcWMOzIzZD77RjuvVSXOH+O/GGL5LKI=",
+        "IoTWorkbench.functionAppId": "/subscriptions/db78b667-b7c2-430a-bb76-16e62f4c7563/resourceGroups/iot-demo/providers/Microsoft.Web/sites/techkb-function-app"
+    }
+}
